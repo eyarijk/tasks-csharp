@@ -484,7 +484,7 @@ namespace lab1
             Console.WriteLine("Enter b");
             double b = Convert.ToDouble(Console.ReadLine());
 
-            Console.WriteLine("Enter b");
+            Console.WriteLine("Enter degree");
             double degree = Convert.ToDouble(Console.ReadLine());
 
             double u = degree * Math.PI / 180;
@@ -493,6 +493,283 @@ namespace lab1
 
             Console.Write("s = " + s);
         }
+
+        public void Task23()
+        {
+            Console.WriteLine("Enter a");
+            double a = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("Enter b");
+            double b = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("Enter c");
+            double c = Convert.ToDouble(Console.ReadLine());
+
+            double p = (a + b + c) / 2;
+            double _h = Math.Sqrt(p * (p - a) * (p - b) * (p - c));
+            double ha = 2 * _h / a;
+            double hb = 2 * _h / b;
+            double hc = 2 * _h / c;
+
+            double ma = (Math.Sqrt(2 * b * b + 2 * c * c - a * a)) / 2;
+            double mb = (Math.Sqrt(2 * a * a + 2 * c * c - b * b)) / 2;
+            double mc = (Math.Sqrt(2 * a * a + 2 * b * b - c * c)) / 2;
+
+            double R_op = (a * b * c) / (4 * _h);
+            double R_vp = Math.Sqrt(((p - a) * (p - b) * (p - c)) / p);
+            double L = (2 * Math.Sqrt(a * b * p * (p - c))) / (a + b);
+
+            Console.Write("ha = " + ha);
+            Console.Write("hb = " + hb);
+            Console.Write("hc = " + hc);
+
+            Console.Write("ma = " + ma);
+            Console.Write("mb = " + mb);
+            Console.Write("mc = " + mc);
+
+            Console.Write("R_op = " + R_op);
+            Console.Write("R_vp = " + R_vp);
+            Console.Write("L = " + L);
+        }
+
+        public void Task24()
+        {
+            Console.WriteLine("Enter x1");
+            double x1 = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("Enter y1");
+            double y1 = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("Enter x2");
+            double x2 = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("Enter y2");
+            double y2 = Convert.ToDouble(Console.ReadLine());
+
+            double d = Math.Sqrt(Math.Pow(x2 - x1, 2) + Math.Pow(y2 - y1, 2));
+
+            Console.Write("d = " + d);
+        }
+
+        public void Task25()
+        {
+            Console.WriteLine("Enter ax1");
+            double x1 = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("Enter ay1");
+            double y1 = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("Enter bx1");
+            double x2 = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("Enter by1");
+            double y2 = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("Enter cx1");
+            double x3 = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("Enter cy1");
+            double y3 = Convert.ToDouble(Console.ReadLine());
+
+            double st1 = Math.Sqrt(Math.Pow(x1 - x2, 2) + Math.Pow(y1 - y2, 2));
+            double st2 = Math.Sqrt(Math.Pow(x2 - x3, 2) + Math.Pow(y2 - y3, 2));
+            double st3 = Math.Sqrt(Math.Pow(x3 - x1, 2) + Math.Pow(y3 - y1, 2));
+
+            double p = st1 + st2 + st3;
+            double pp = p / 2;
+            double s = Math.Sqrt(pp * (pp - st1) * (pp - st2) * (pp - st3));
+
+            Console.Write("p = " + p);
+            Console.Write("s = " + s);
+        }
+
+        public void Task26()
+        {
+            double r = 13.7f;
+
+            Console.WriteLine("Enter Radians");
+            double radians = Convert.ToDouble(Console.ReadLine());
+
+            double result = r * r * radians / 2;
+
+            Console.Write("result = " + result);
+        }
+
+        public void Task27()
+        {
+            Console.WriteLine("Enter a");
+            double a = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("Enter b");
+            double b = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("Enter c");
+            double c = Convert.ToDouble(Console.ReadLine());
+
+            if ((a + b <= c) || (a + c <= b) || (b + c <= a))
+            {
+                Console.WriteLine("треугольник с такими сторонами не существует");
+                return;
+            }
+
+            double alpha = Math.Acos((Math.Pow(b, 2) + Math.Pow(c, 2) - Math.Pow(a, 2)) / (2 * b * c)) * 180 / Math.PI;
+            double beta = Math.Acos((Math.Pow(a, 2) + Math.Pow(c, 2) - Math.Pow(b, 2)) / (2 * a * c)) * 180 / Math.PI;
+            double gamma = 180 - alpha - beta;
+
+            Console.Write("alpha = " + alpha);
+            Console.Write("beta = " + beta);
+            Console.Write("gamma = " + gamma);
+        }
+
+        public void Task28()
+        {
+            Console.WriteLine("Enter x");
+            double x = Convert.ToDouble(Console.ReadLine());
+
+            double a = 2 * x * x * (x * x + 2) - x * (3 * x * x - 5) + 6;
+
+            Console.Write("a = " + a);
+        }
+
+        public void Task29()
+        {
+            Console.WriteLine("Enter x");
+            double x = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("Enter x");
+            double y = Convert.ToDouble(Console.ReadLine());
+
+            double a = 3 * Math.Pow(x, 2) * Math.Pow(y, 2) - (2 * x) * Math.Pow(y, 2) - (7 * Math.Pow(x, 2) * y) - 4 * Math.Pow(y, 2) + 15 * x * y + 2 * Math.Pow(x, 3) - 3 * x + 10 * y + 6;
+
+            Console.Write("a = " + a);
+        }
+
+        public void Task30()
+        {
+            Console.WriteLine("Enter x");
+            double x = Convert.ToDouble(Console.ReadLine());
+
+            double res1 = 1 - 2 * x + 3 * x * x - 4 * x * x * x;
+            double res2 = 1 + 2 * x + 3 * x * x + 4 * x * x * x;
+
+            Console.Write("res1 = " + res1);
+            Console.Write("res2 = " + res2);
+        }
+
+        public void Task31_1()
+        {
+            Console.WriteLine("Enter x");
+            double x = Convert.ToDouble(Console.ReadLine());
+
+            double a = x * x;
+            a *= a;
+
+            Console.Write("a = " + a);
+        }
+
+        public void Task31_2()
+        {
+            Console.WriteLine("Enter x");
+            double x = Convert.ToDouble(Console.ReadLine());
+
+            double a = x * x;
+            a *= a;
+            double b = a * a;
+
+            Console.Write("a = " + a * b);
+        }
+
+        public void Task31_3()
+        {
+            Console.WriteLine("Enter x");
+            double x = Convert.ToDouble(Console.ReadLine());
+
+            double b = x * x;
+            double c = b * b;
+            b = c * b;
+
+            Console.Write("a = " + x * b);
+        }
+
+        public void Task31_4()
+        {
+            Console.WriteLine("Enter x");
+            double x = Convert.ToDouble(Console.ReadLine());
+
+            double a = x * x;
+            a *= a;
+            a *= a;
+
+            Console.Write("a = " + x);
+        }
+
+        public void Task32_1()
+        {
+            Console.WriteLine("Enter x");
+            double x = Convert.ToDouble(Console.ReadLine());
+
+            double a2 = x * x;
+            double a3 = a2 * x;
+            double a5 = a3 * a2;
+
+            Console.Write("a = " + a5 * a5);
+        }
+
+        public void Task32_2()
+        {
+            Console.WriteLine("Enter x");
+            double x = Convert.ToDouble(Console.ReadLine());
+
+            double a2 = x * x;
+            double a4 = a2 * a2;
+            double a8 = a4 * a4;
+            double a16 = a8 * a8;
+
+            Console.Write("a = " + a16 * a4);
+        }
+
+        public void Task32_3()
+        {
+            Console.WriteLine("Enter x");
+            double x = Convert.ToDouble(Console.ReadLine());
+
+            double a2 = x * x;
+            double a4 = a2 * a2;
+            double a5 = a2 * x;
+            double a9 = a5 * a4;
+            double a18 = a9 * a9;
+
+            Console.Write("a = " + a18 * x);
+        }
+
+        public void Task32_4()
+        {
+            Console.WriteLine("Enter x");
+            double x = Convert.ToDouble(Console.ReadLine());
+
+            double a2 = x * x;
+            double a5 = a2 * x;
+            double a10 = a5 * a5;
+            double a15 = a10 * a2;
+
+            Console.Write("a = " + a15 * a2);
+        }
+
+        public void Task32_5()
+        {
+            Console.WriteLine("Enter x");
+            double x = Convert.ToDouble(Console.ReadLine());
+
+            double a2 = x * x;
+            double a4 = a2 * a2;
+            double a8 = a4 * a4;
+            double a12 = a8 * a4;
+            double a24 = a12 * a12;
+            double a28 = a24 * a4;
+
+            Console.Write("a = " + a28);
+        }
+
 
         private int Factorial(int number)
         {
